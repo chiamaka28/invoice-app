@@ -72,6 +72,7 @@
   --color-light: var(--color-light-bg);
   --color-dark: var(--color-dark-1);
   --color-white: var(--color-white);
+  --color-black: var(--color-black);
   --color-primary: var(--color-primary);
   --color-meduim-gray: var(--color-gray-1);
   --color-very-light-purple: var(--color-primary-lighter);

@@ -61,20 +61,27 @@ export default function SignupForm() {
     >
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
-          <h1 className="text-2xl font-bold">Create your account</h1>
-          <p className="text-muted-foreground text-sm text-balance">
+          <h1 className="text-2xl font-bold text-black dark:text-white">
+            Create your account
+          </h1>
+          <p className="text-sm text-balance text-black dark:text-white">
             Fill in the form below to create your account
           </p>
         </div>
         <Field>
-          <FieldLabel htmlFor="first-name">First Name</FieldLabel>
+          <FieldLabel
+            htmlFor="first-name"
+            className="text-black dark:text-white"
+          >
+            First Name
+          </FieldLabel>
           <Input
             {...register('firstName')}
             id="first-name"
             type="text"
             placeholder="John"
             className={cn(
-              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
             )}
           />
         </Field>
@@ -82,14 +89,19 @@ export default function SignupForm() {
           {errors.firstName && errors.firstName.message}
         </FieldError>
         <Field>
-          <FieldLabel htmlFor="last-name">Last Name</FieldLabel>
+          <FieldLabel
+            htmlFor="last-name"
+            className="text-black dark:text-white"
+          >
+            Last Name
+          </FieldLabel>
           <Input
             {...register('lastName')}
             id="last-name"
             type="text"
             placeholder="Doe"
             className={cn(
-              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
             )}
           />
         </Field>
@@ -97,14 +109,16 @@ export default function SignupForm() {
           {errors.lastName && errors.lastName.message}
         </FieldError>
         <Field>
-          <FieldLabel htmlFor="email">Email</FieldLabel>
+          <FieldLabel htmlFor="email" className="text-black dark:text-white">
+            Email
+          </FieldLabel>
           <Input
             {...register('email')}
             id="email"
             type="email"
             placeholder="john.doe@example.com"
             className={cn(
-              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
             )}
           />
         </Field>
@@ -112,14 +126,16 @@ export default function SignupForm() {
           {errors.email && errors.email.message}
         </FieldError>
         <Field>
-          <FieldLabel htmlFor="password">Password</FieldLabel>
+          <FieldLabel htmlFor="password" className="text-black dark:text-white">
+            Password
+          </FieldLabel>
           <div className="relative">
             <Input
               {...register('password')}
               id="password"
               type={showPassword ? 'text' : 'password'}
               className={cn(
-                'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+                'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
               )}
             />
             <Button
@@ -142,14 +158,20 @@ export default function SignupForm() {
           {errors.password && errors.password.message}
         </FieldError>
         <Field>
-          <FieldLabel htmlFor="confirm-password"> Confirm Password</FieldLabel>
+          <FieldLabel
+            htmlFor="confirm-password"
+            className="text-black dark:text-white"
+          >
+            {' '}
+            Confirm Password
+          </FieldLabel>
           <div className="relative">
             <Input
               {...register('confirmPassword')}
               id="confirm-password"
               type={showConfirmPassword ? 'text' : 'password'}
               className={cn(
-                'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+                'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
               )}
             />
             <Button
@@ -174,15 +196,12 @@ export default function SignupForm() {
           {errors.confirmPassword && errors.confirmPassword.message}
         </FieldError>
         <Field>
-          <Button
-            type="submit"
-            className="dark:text-very-light-purple text-white"
-          >
+          <Button type="submit" className="text-white">
             Sign Up
           </Button>
         </Field>
         <Field>
-          <FieldDescription className="text-center">
+          <FieldDescription className="text-center text-black dark:text-white">
             Already have an account?
             <Link to="/login" className="mx-1 underline underline-offset-4">
               Log in

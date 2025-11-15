@@ -5,7 +5,7 @@ export default function LoginPage() {
   return (
     <div className="bg-light dark:bg-dark grid min-h-svh lg:grid-cols-2">
       <div className="flex flex-col gap-4 p-6 md:p-10">
-        <div className="flex justify-center gap-2 text-lg md:justify-start">
+        <div className="flex justify-center gap-2 text-lg md:justify-start dark:text-white">
           <a href="#" className="flex items-center gap-2 font-medium">
             <div className="flex size-6 items-center justify-center rounded-md">
               <GalleryVerticalEnd className="size-4" />

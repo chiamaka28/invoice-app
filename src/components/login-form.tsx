@@ -46,20 +46,24 @@ export function LoginForm() {
     >
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
-          <h1 className="text-2xl font-bold">Welcome back!</h1>
-          <p className="text-muted-foreground text-sm text-balance">
+          <h1 className="text-2xl font-bold text-black dark:text-white">
+            Welcome back!
+          </h1>
+          <p className="text-sm text-balance text-black dark:text-white">
             Login with your details
           </p>
         </div>
         <Field>
-          <FieldLabel htmlFor="email">Email</FieldLabel>
+          <FieldLabel htmlFor="email" className="text-black dark:text-white">
+            Email
+          </FieldLabel>
           <Input
             {...register('email')}
             id="email"
             type="email"
             placeholder="m@example.com"
             className={cn(
-              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col gap-6 focus-visible:ring-1'
+              'border-meduim-gray focus-visible:border-ring focus-visible:ring-ring/50 placeholder:text-meduim-gray flex flex-col gap-6 focus-visible:ring-1'
             )}
           />
         </Field>
@@ -68,10 +72,15 @@ export function LoginForm() {
         </FieldError>
         <Field>
           <div className="flex items-center">
-            <FieldLabel htmlFor="password">Password</FieldLabel>
+            <FieldLabel
+              htmlFor="password"
+              className="text-black dark:text-white"
+            >
+              Password
+            </FieldLabel>
             <Link
               to="/login"
-              className="ml-auto text-sm underline-offset-4 hover:underline"
+              className="ml-auto text-sm text-black underline-offset-4 hover:underline dark:text-white"
             >
               Forgot your password?
             </Link>
@@ -105,16 +114,13 @@ export function LoginForm() {
           {errors.password && errors.password.message}
         </FieldError>
         <Field>
-          <Button
-            type="submit"
-            className="dark:text-very-light-purple text-white"
-          >
+          <Button type="submit" className="text-white">
             Login
           </Button>
         </Field>
 
         <Field>
-          <FieldDescription className="text-center">
+          <FieldDescription className="text-center text-black dark:text-white">
             Don&apos;t have an account?
             <Link to="/signup" className="mx-1 underline underline-offset-4">
               Sign up
