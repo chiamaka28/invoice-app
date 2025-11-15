@@ -8,40 +8,40 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as authSignupRouteImport } from "./routes/(auth)/signup";
-import { Route as authLoginRouteImport } from "./routes/(auth)/login";
+import { Route as rootRouteImport } from './routes/__root';
+import { Route as authSignupRouteImport } from './routes/(auth)/signup';
+import { Route as authLoginRouteImport } from './routes/(auth)/login';
 
 const authSignupRoute = authSignupRouteImport.update({
-  id: "/(auth)/signup",
-  path: "/signup",
+  id: '/(auth)/signup',
+  path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any);
 const authLoginRoute = authLoginRouteImport.update({
-  id: "/(auth)/login",
-  path: "/login",
+  id: '/(auth)/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any);
 
 export interface FileRoutesByFullPath {
-  "/login": typeof authLoginRoute;
-  "/signup": typeof authSignupRoute;
+  '/login': typeof authLoginRoute;
+  '/signup': typeof authSignupRoute;
 }
 export interface FileRoutesByTo {
-  "/login": typeof authLoginRoute;
-  "/signup": typeof authSignupRoute;
+  '/login': typeof authLoginRoute;
+  '/signup': typeof authSignupRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
-  "/(auth)/login": typeof authLoginRoute;
-  "/(auth)/signup": typeof authSignupRoute;
+  '/(auth)/login': typeof authLoginRoute;
+  '/(auth)/signup': typeof authSignupRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/login" | "/signup";
+  fullPaths: '/login' | '/signup';
   fileRoutesByTo: FileRoutesByTo;
-  to: "/login" | "/signup";
-  id: "__root__" | "/(auth)/login" | "/(auth)/signup";
+  to: '/login' | '/signup';
+  id: '__root__' | '/(auth)/login' | '/(auth)/signup';
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
@@ -49,19 +49,19 @@ export interface RootRouteChildren {
   authSignupRoute: typeof authSignupRoute;
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/(auth)/signup": {
-      id: "/(auth)/signup";
-      path: "/signup";
-      fullPath: "/signup";
+    '/(auth)/signup': {
+      id: '/(auth)/signup';
+      path: '/signup';
+      fullPath: '/signup';
       preLoaderRoute: typeof authSignupRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    "/(auth)/login": {
-      id: "/(auth)/login";
-      path: "/login";
-      fullPath: "/login";
+    '/(auth)/login': {
+      id: '/(auth)/login';
+      path: '/login';
+      fullPath: '/login';
       preLoaderRoute: typeof authLoginRouteImport;
       parentRoute: typeof rootRouteImport;
     };

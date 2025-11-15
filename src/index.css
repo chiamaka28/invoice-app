@@ -1,1 +1,134 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Font Family */
+  --font-family-base:
+    'League Spartan', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Sizes */
+  --font-size-h1: 2rem; /* 32px */
+  --font-size-h2: 1.25rem; /* 20px */
+  --font-size-h3: 1rem; /* 16px */
+  --font-size-h3-small: 0.75rem; /* 12px */
+  --font-size-body: 0.75rem; /* 12px */
+  --font-size-body-2: 0.6875rem; /* 11px */
+
+  /* Line Heights */
+  --line-height-h1: 2.25rem; /* 36px */
+  --line-height-h2: 1.375rem; /* 22px */
+  --line-height-h3: 1.5rem; /* 24px */
+  --line-height-h3-small: 0.9375rem; /* 15px */
+  --line-height-body: 0.9375rem; /* 15px */
+  --line-height-body-2: 1.125rem; /* 18px */
+
+  /* Letter Spacing */
+  --letter-spacing-h1: -0.01em; /* -1% */
+  --letter-spacing-h2: -0.0063em; /* -0.63% */
+  --letter-spacing-h3: -0.0085em; /* -0.85% */
+  --letter-spacing-h3-small: -0.0025em; /* -0.25% */
+  --letter-spacing-body: -0.0025em; /* -0.25% */
+  --letter-spacing-body-2: -0.0023em; /* -0.23% */
+
+  /* ===== COLORS ===== */
+
+  /* Primary Colors */
+  --color-primary: #7c5dfa; /* Purple */
+  --color-primary-light: #9277ff; /* Light Purple */
+  --color-primary-lighter: #dfe3fa; /* Very Light Purple */
+
+  /* Dark Colors */
+  --color-dark-1: #1e2139; /* Dark Navy */
+  --color-dark-2: #252945; /* Dark Blue */
+  --color-dark-3: #141625; /* Darkest Navy */
+
+  /* Gray Colors */
+  --color-gray-1: #888eb0; /* Medium Gray */
+  --color-gray-2: #7e88c3; /* Blue Gray */
+
+  /* Status Colors */
+  --color-danger: #ec5757; /* Red */
+  --color-danger-light: #ff9797; /* Light Red */
+
+  /* Black & White */
+  --color-black: #0c0e16; /* Pure Black */
+  --color-white: #ffffff;
+  --color-light-bg: #f8f8fb; /* Light Background */
+}
+
+@theme inline {
+  --color-light: var(--color-light-bg);
+  --color-dark: var(--color-dark-1);
+  --color-white: var(--color-white);
+  --color-primary: var(--color-primary);
+  --color-meduim-gray: var(--color-gray-1);
+  --color-very-light-purple: var(--color-primary-lighter);
+  --color-red: var(--color-danger);
+  --color-light-red: var(--color-danger-light);
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   TYPOGRAPHY STYLES
+   =========================== */
+
+h1 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+}
+
+h2 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-h2);
+}
+
+h3 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
+}
+
+h4 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h3-small);
+  line-height: var(--line-height-h3-small);
+  letter-spacing: var(--letter-spacing-h3-small);
+}
+
+p {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+}

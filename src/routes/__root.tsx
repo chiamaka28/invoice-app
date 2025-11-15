@@ -1,5 +1,5 @@
-import { createRootRoute, Outlet, redirect } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { createRootRoute, Outlet, redirect } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 const RootLayout = () => (
   <>
@@ -11,9 +11,9 @@ const RootLayout = () => (
 export const Route = createRootRoute({
   component: RootLayout,
   beforeLoad: async ({ location }) => {
-    if (location.pathname === "/") {
+    if (location.pathname === '/') {
       // Cast to any because the generated route types may not include '/courses' yet.
-      throw redirect({ to: "/login" as any, replace: true });
+      throw redirect({ to: '/login' as any, replace: true });
     }
   },
 });
